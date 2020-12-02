@@ -1,0 +1,132 @@
+html {
+  background: #000;
+}
+
+body{
+  margin: auto;
+  font-family: "Press_Start_2P", cursive;
+}
+
+#deco_help{
+  margin:50px;
+}
+
+section{
+  color: yellow;
+  font-size: 19px; 
+  line-height: 1.3;
+  text-align: justify;
+  margin:50px;
+}
+#text{
+  padding-top:20px;
+  margin-right:100px;
+}
+.three-columns { 
+  -webkit-column-count: 3;
+  column-count: 3;
+}
+
+.two-columns {
+  margin: 5px;  
+  -webkit-column-count: 2;
+  column-count: 2;
+}
+
+#banner{
+  animation-name: shinein;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+  padding: 2px;
+  color: #ffffff;
+  background-color: yellow;
+  border: 4px double yellow;
+}
+
+@keyframes shinein{
+  from{
+    border: 4px double rgb(89, 0, 255);
+  }
+  to{
+    border: 4px double white;
+  }
+}
+
+#home{
+  margin-top:100px;
+  overflow:hidden;
+}
+
+#end{
+  margin-top:20px;
+  overflow:hidden;
+}
+
+#menu{
+  animation-name: shinein;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+  margin-left:500px;
+  margin-right:500px;
+  margin-bottom:100px;
+
+  text-decoration: none;
+  padding: 50px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: yellow;
+  border-radius: 10px;
+  border: 4px solid yellow;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+canvas{
+  font-family: "Press Start 2P", cursive;
+}
+
+.boton_personalizado{
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  color:#000;
+  background-color: yellow;
+  border-radius: 10px;
+  border: 4px solid ;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  }
+
+.boton_personalizado:hover{
+  color:rgb(98, 0, 255);
+  text-decoration: none;
+  }
+
+
+#b2{
+  margin:250px;
+}
+
+@font-face {
+  font-family: "Press_Start_2P";
+  src: url("PressStart2P-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#tomb {
+  width: 342px;
+  margin: 20px auto;
+}
+
+.tomb-game {
+  margin-top: 100px;
+  color: #fff;
+  text-transform: uppercase;
+      font-size: 1.5em;
+    text-align: center;
+}
