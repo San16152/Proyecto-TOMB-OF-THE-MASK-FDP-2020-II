@@ -1,4 +1,4 @@
-function Personaje(x, y) {
+function Personaje(x, y) {//constructor personaje
   this.x = x;
   this.y = y;
   this.direction = 0;
@@ -50,12 +50,11 @@ function Personaje(x, y) {
       console.log(this.radius + comida*16);
       return true;
     }else{
-      //console.log("fake");
       return false;
     }
   }
 
-  this.colission = function(ola){
+  this.colission = function(ola){ //detecta si el personaje esta colisionando con la ola
     var dis = dist(this.x,this.y,ola.x,ola.y);
     if(dis < this.radius + ola.radius){
       return true;

@@ -1,3 +1,4 @@
+//variables
 var bloqueimg;
 var comidaimg;
 var relojimg;
@@ -16,6 +17,9 @@ var agua;
 var aguas = [];
 var subir = false;
 var monedas = 0;
+
+
+
 //cargamos las imagenes
 function preload() {
   bloqueimg = loadImage("images/bloque.bmp");
@@ -31,7 +35,8 @@ function preload() {
 }
 //cargamos el mapa
 function setup() {
-  createCanvas(1520, 720);
+  
+  createCanvas(544, 512);
   maps = new Mapa();
   subir = true
 
@@ -93,7 +98,6 @@ function draw() {
           title: monedas,
           text: "ha sido su puntuacion",
         });
-        setTimeout(5000);
         window.location = "win.html";
       }
     }
@@ -102,7 +106,7 @@ function draw() {
   for (var i = 0; i < relojs.length; i++) {
     if (personaje.comer(relojs[i])) {
       relojs.splice(i, 1);
-      console.log("devolver agua");// insertar audio v: de tiring
+      //console.log("devolver agua");// insertar audio v: de tiring
       let moverAgua = subirAgua(false);
       do {
         setTimeout(() => { subirAgua(true) }, 3000);
@@ -115,7 +119,7 @@ function draw() {
     }
   }
 
-
+//detectar cuando hay colision con la ola para terminar el juego
   for (var i = 0; i < aguas.length; i++) {
     aguas[i].move(true);
     aguas[i].show();
@@ -124,71 +128,35 @@ function draw() {
         title: monedas,
         text: "ha sido su puntuacion",
       });
-      setTimeout(5000);
       window.location = "end.html";
     }
   }
-
-  //aguita xd
-
-
-}
-/*function moverAgua(d){
-  for (var i = 0; i < aguas.length; i++) {
-    aguas[i].subir = 1;
-  }
-}
-function bajarAgua(){
-
 }
 
-function subirAgua(){
- if (subir=== true){
-    agua.move(3)
-  }else{
-    agua.move(1)
-    setTimeout(subirAgua,3000)
-    subir=true;
-  }
-  setTimeout(subirAgua,3000)*/
-/*setTimeout(subirAgua,3000)
-agua.move(3)
-for (var i = 0; i < aguas.length; i++) {
-  aguas[i].subir = 3;
-}
-}
-*/
 //captura las teclas presionadas y avisa al personaje
-
-//Captura las teclas que se presionen
 function keyPressed() {
   if (keyCode === RIGHT_ARROW) {
-    if (maps.map[personaje.y / 32][personaje.x / 32 + 1] !== "1") {  //bloques
+    if (maps.map[personaje.y / 32][personaje.x / 32 + 1] !== "1") {  //prevee si hay muros
       personaje.move(0);
-      //agua.move(0);
-      // console.log("derecha");
     }
   }
   if (keyCode === DOWN_ARROW) {
-    if (maps.map[personaje.y / 32 + 1][personaje.x / 32] !== "1") {  //bloques
+    if (maps.map[personaje.y / 32 + 1][personaje.x / 32] !== "1") {  //prevee si hay muros
       personaje.move(1);
-      //console.log("abajo");
-      //agua.move(1);
     }
 
   }
   if (keyCode === LEFT_ARROW) {
-    if (maps.map[personaje.y / 32][personaje.x / 32 - 1] !== "1") {  //bloques
+    if (maps.map[personaje.y / 32][personaje.x / 32 - 1] !== "1") {  //prevee si hay muross
       personaje.move(2);
       //console.log("izquierda");
       //agua.move(0);
     }
   }
   if (keyCode === UP_ARROW) {
-    if (maps.map[personaje.y / 32 - 1][personaje.x / 32] !== "1") {  //bloques
+    if (maps.map[personaje.y / 32 - 1][personaje.x / 32] !== "1") { //prevee si hay muros
       personaje.move(3);
       //console.log("arriba");
-      //agua.move(3);
     }
   }
 }

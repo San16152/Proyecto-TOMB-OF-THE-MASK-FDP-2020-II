@@ -1,6 +1,5 @@
 //0 = nada 1=bloque 2= moneda 3= reloj p= personaje   a = agua
-//- = nada *= bloque
-function Mapa(){ 
+function Mapa(){ //constructor del mapa
   this.filas = 17;
   this.columnas = 16;
   //matrix del mapa
